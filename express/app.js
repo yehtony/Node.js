@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var indexreactRouter = require('./routes/indexreact');
 var jsonRouter = require('./routes/json');
+var loginRouter = require('./server/login');
 var cors = require('cors');
 
 var app = express();
@@ -27,6 +28,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/indexreact', indexreactRouter);
 app.use('/json', jsonRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

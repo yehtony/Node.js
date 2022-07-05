@@ -1,0 +1,1 @@
+INSERT INTO user (U_Name, Email,Password)VALUES ('yexuan', 'yexuanncu@gmail.com','110524031');

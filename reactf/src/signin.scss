@@ -1,0 +1,98 @@
+body {
+    margin: 1%;
+}
+
+input {
+    font-size: large;
+    border-width: 4px;
+    border-radius: 1rem;
+}
+
+.container {
+    font-family: Lucida Sans Unicode;
+    width: 35%;
+    //align-items: center;
+    //text-align: center;
+    margin: auto;
+    padding: 2%;
+    font-size: x-large;
+    border: 4px solid;
+    border-radius: 0.5em;
+}
+
+.title {
+    /* margin-bottom: 5%; */
+    text-align: center;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.signin>.email {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin-bottom: 3%;
+    font-weight: bolder;
+}
+
+.signin>.password {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 25% 55% 20%;
+    margin-bottom: 3%;
+    font-weight: bolder;
+
+    .showpassword {
+        font-weight: normal;
+        text-align: right;
+        font-size: x-small;
+    }
+}
+
+button {
+    width: 100%;
+    margin-top: 3%;
+    font-family: Lucida Sans Unicode;
+    font-size: x-large;
+
+    &.b1 {
+        background-color: darkturquoise;
+        border-radius: 0.5em;
+
+        &:hover {
+            background-color: dodgerblue;
+            color: white;
+        }
+    }
+}
+
+.other {
+    margin-top: 2%;
+    text-align: right;
+
+    .b2 {
+        font-size: large;
+        margin-right: 1%;
+        width: fit-content;
+        border-radius: 0.5em;
+        background-color: transparent;
+
+        &:hover {
+            border-color: deeppink;
+            color: deeppink;
+        }
+    }
+
+    .b3 {
+        font-size: large;
+        margin-left: 1%;
+        width: fit-content;
+        border-radius: 0.5em;
+        background-color: transparent;
+
+        &:hover {
+            border-color: deepskyblue;
+            color: deepskyblue;
+        }
+    }
+}

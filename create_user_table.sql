@@ -1,0 +1,6 @@
+CREATE TABLE user (
+    U_Id INT AUTO_INCREMENT PRIMARY KEY,
+    U_Name VARCHAR(16),
+    Email VARCHAR(50) KEY,
+    Password VARCHAR(16)
+);
