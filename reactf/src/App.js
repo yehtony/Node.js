@@ -29,7 +29,7 @@ function App() {
 function Fetchtest(){
   useEffect(() => {
     async function fetchData() {
-      let res = await fetch("http://localhost:3001/json")
+      let res = await fetch("http://localhost:3001/signin")
       let data = await res.json()
       console.log(data)
     }
