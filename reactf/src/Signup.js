@@ -1,16 +1,14 @@
 import React from 'react';
-import './Signin.scss';
-//import axios from 'axios';
+import './Signup.scss';
 import { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
-//import { promise } from '../../express/server/config/db';
-//import { useNavigation } from 'react';
+import { useNavigation } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Signin() {
-    const navigate = useNavigate();
     //const { user, setUser } = useState('E-mail', 'Password');
+    const navigate = useNavigate();
     const Login = () => {
         async function FetchData() {
             let email = await document.getElementById('email').value;
@@ -90,16 +88,16 @@ function Signin() {
     return (
         // <form>
         <fieldset className='container'>
-            <legend className='title'>Sign In</legend>
-            <div className='signin'>
+            <legend className='title'>Sign Up</legend>
+            <div className='signup'>
+                <fieldset className='field'><legend>Username</legend><input type='text' id='username' name='username' placeholder='type your name' /></fieldset>
                 <fieldset className='field'><legend>E-mail</legend><input type='text' id='email' name='email' placeholder='type your email' /></fieldset>
                 <fieldset className='field'><legend>Password</legend><input type='password' id='password' name='password' placeholder='type your password' /></fieldset>
                 <div className='showpassword'><input type='checkbox' id='showpassword' onChange={() => Showpassword()} />show password</div>
             </div>
-            <div><button className='button b1' type='submit' onClick={() => Login()}> Sign In</button></div>
+            <div><button className='button b1' type='submit' onClick={() => Login()}> Sign Up</button></div>
             <div className='other'>
-                <button className='button b2'>forget password?</button>
-                <button className='button b3' onClick={() => navigate('/signup')}>Unregistered?</button>
+                <button className='button b3' onClick={() => navigate('/')}>Already have Account! Sign In</button>
             </div>
         </fieldset >
         // </form >

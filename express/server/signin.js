@@ -12,13 +12,34 @@ const db = require('./config/db');
 
 router.post("/", function (req, res) {
     const { email, password } = req.body;
+    //console.log(data);
     const sql = `SELECT * FROM user WHERE Email='${email}' AND Password='${password}'`;
+    const sql2 = `SELECT * FROM user WHERE Email='${email}'`;
     db.query(sql, function (err, data, fields) {
         if (data.length === 0) {
-            return res.send({ error: 'ACCOUNT_NOT_EXIST' });
+            db.query(sql2, function (err, data, fields) {
+                if (data.length === 0)
+                    res.json({ error: 'Account Not Exist' });
+                else
+                    res.json({ error: 'Password Wrong' });
+            })
         }
-        return res.send({ message: 'LOGIN_SUCESSFULY' });
+        else
+            res.json({ message: 'Login Successfully' });
     });
+    // const promise1 = new Promise((resolve, reject) => {
+    //     db.query(sql, function (err, data, fields) {
+    //         if (data.length === 0) {
+    //             resolve('1');
+    //         }
+    //         else
+    //             reject('2');
+    //     });
+    // })
+    // promise1().then(success => { return res.json({ error: 'Account Not Exist' }); })
+    //     .catch(err => {
+    //         return res.json({ message: 'Login Successfully' });
+    //     })
 })
 
 module.exports = router;
