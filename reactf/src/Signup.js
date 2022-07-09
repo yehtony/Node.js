@@ -26,7 +26,7 @@ function Signup() {
                         .then((res) => {
                             return res.json();
                         })
-                        .then((data) => {
+                        .then(data => {
                             console.log(data[Object.keys(data)[0]]);
                             alert(data[Object.keys(data)[0]]);
                             navigate('/');
