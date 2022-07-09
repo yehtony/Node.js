@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-function Signin() {
+function Signup() {
     //const { user, setUser } = useState('E-mail', 'Password');
     const navigate = useNavigate();
     const Login = () => {
@@ -15,7 +15,7 @@ function Signin() {
             let password = await document.getElementById('password').value;
             if (email !== "" && password !== "") {
                 async function PostData() {
-                    fetch("http://localhost:3001/signin", {
+                    fetch("http://localhost:3001/signup", {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'
@@ -28,6 +28,7 @@ function Signin() {
                         .then(data => {
                             console.log(data[Object.keys(data)[0]]);
                             alert(data[Object.keys(data)[0]]);
+                            navigate('/');
                         })
                         .catch((err) => {
                             console.log(err);
@@ -112,4 +113,4 @@ function Showpassword() {
         document.getElementById('password').type = 'password';
 }
 
-export default Signin;
+export default Signup;
