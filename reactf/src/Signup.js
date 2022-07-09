@@ -29,8 +29,7 @@ function Signup() {
                         .then(data => {
                             console.log(data[Object.keys(data)[0]]);
                             alert(data[Object.keys(data)[0]]);
-                            navigate('/');
-                        })
+                        },navigate('/'))
                         .catch((err) => {
                             console.log(err);
                             alert(err);

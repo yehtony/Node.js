@@ -28,22 +28,29 @@ function Getpassword() {
                             return res.json();
                         })
                         .then(data => {
-                            // console.log(data[Object.keys(data)[0]]);
+                            console.log(data[Object.keys(data)[0]]);
                             alert(data[Object.keys(data)[0]]);
+                            if (data[Object.keys(data)[0]] === 'Account Not Exist')
+                                Promise.reject();
+                            else
+                                Promise.resolve();
                         })
+                        .then(() => navigate('/'))
                         .catch((err) => {
-                            console.log(err);
-                            alert(err);
+                            // console.log(err);
+                            // alert(err);
                         })
                 }
                 PostData();
-            } else if (email === "") {
+            }
+            else if (email === "") {
                 alert("Type Email !");
-            } else {
-                alert("Type Password !");
             }
         }
         FetchData();
+    }
+    function a(data) {
+
     }
     // const login = () => {
     //     setEmail(document.getElementById('email').value);

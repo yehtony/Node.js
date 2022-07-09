@@ -10,7 +10,7 @@ var indexreactRouter = require('./routes/indexreact');
 var jsonRouter = require('./routes/json');
 var signinRouter = require('./server/signin');
 var signupRouter = require('./server/signup');
-var getpasswordRouter = require('./server/Getpassword');
+var getpasswordRouter = require('./server/getpassword');
 var cors = require('cors');
 
 var app = express();
