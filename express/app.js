@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 var indexreactRouter = require('./routes/indexreact');
 var jsonRouter = require('./routes/json');
 var signinRouter = require('./server/signin');
+var signupRouter = require('./server/signup');
+var getpasswordRouter = require('./server/Getpassword');
 var cors = require('cors');
 
 var app = express();
@@ -18,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(cors());
-app.use(logger('dev'));
+app.use(logger('dev'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -29,6 +31,8 @@ app.use('/users', usersRouter);
 app.use('/indexreact', indexreactRouter);
 app.use('/json', jsonRouter);
 app.use('/signin', signinRouter);
+app.use('/signup', signupRouter);
+app.use('/getpassword', getpasswordRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

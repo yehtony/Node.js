@@ -8,27 +8,27 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function Signin() {
+function Getpassword() {
     const navigate = useNavigate();
     //const { user, setUser } = useState('E-mail', 'Password');
     const Login = () => {
         async function FetchData() {
             let email = await document.getElementById('email').value;
-            let password = await document.getElementById('password').value;
-            if (email !== "" && password !== "") {
+            // let password = await document.getElementById('password').value;
+            if (email !== "") {
                 async function PostData() {
-                    fetch("http://localhost:3001/signin", {
+                    fetch("http://localhost:3001/getpassword", {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ email: email, password: password })
+                        body: JSON.stringify({ email: email })
                     })
                         .then((res) => {
                             return res.json();
                         })
                         .then(data => {
-                            console.log(data[Object.keys(data)[0]]);
+                            // console.log(data[Object.keys(data)[0]]);
                             alert(data[Object.keys(data)[0]]);
                         })
                         .catch((err) => {
@@ -77,28 +77,26 @@ function Signin() {
     return (
         <form onSubmit={Login}>
             <fieldset className='container'>
-                <legend className='title'>Sign In</legend>
+                <legend className='title'>Get Password</legend>
                 <div className='signin'>
                     <fieldset className='field'><legend>E-mail</legend><input type='text' id='email' name='email' placeholder='type your email' /></fieldset>
-                    <fieldset className='field'><legend>Password</legend><input type='password' id='password' name='password' placeholder='type your password' /></fieldset>
-                    <div className='showpassword'><input type='checkbox' id='showpassword' onChange={() => Showpassword()} />show password</div>
                 </div>
-                <div><button className='button b1' type='submit'> Sign In</button></div>
-                <div className='other'>
-                    <button className='button b2' type='button' onClick={() => navigate('/getpassword')}>forget password?</button>
+                <div><button className='button b1' type='submit'>Send Email</button></div>
+                {/* <div className='other'>
+                    <button className='button b2' type='button'>forget password?</button>
                     <button className='button b3' type='button' onClick={() => navigate('/signup')}>Unregistered?</button>
-                </div>
+                </div> */}
             </fieldset >
         </form >
     )
 }
 
-function Showpassword() {
-    if (document.getElementById('showpassword').checked === true) {
-        document.getElementById('password').type = 'text';
-    }
-    else
-        document.getElementById('password').type = 'password';
-}
+// function Showpassword() {
+//     if (document.getElementById('showpassword').checked === true) {
+//         document.getElementById('password').type = 'text';
+//     }
+//     else
+//         document.getElementById('password').type = 'password';
+// }
 
-export default Signin;
+export default Getpassword;

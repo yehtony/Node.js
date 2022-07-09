@@ -9,6 +9,10 @@ input::-webkit-input-placeholder {
     font-size: 17.5px;
 }
 
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
 .container {
     font-family: Lucida Sans Unicode;
     width: 500px;
