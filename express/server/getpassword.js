@@ -17,7 +17,7 @@ router.post("/", function (req, res) {
     const sql = `SELECT * FROM user WHERE Email='${email}'`;
     db.query(sql, function (err, data) {
         if (data.length === 1) {
-            mail.sendMail(mailOptions(data), function (err, data) { });
+            mail.sendMail(mailOptions(data));
             res.json({ message: 'Password Sent to Email' })
         }
         else

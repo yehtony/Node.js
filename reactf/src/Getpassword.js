@@ -48,9 +48,6 @@ function Getpassword() {
         }
         FetchData();
     }
-    function a(data) {
-
-    }
     // const login = () => {
     //     setEmail(document.getElementById('email').value);
     //     setPassword(document.getElementById('password').value);

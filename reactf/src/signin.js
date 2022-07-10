@@ -7,8 +7,6 @@ import Homepage from './Homepage'
 //import { promise } from '../../express/server/config/db';
 //import { useNavigation } from 'react';
 
-
-
 function Signin() {
     const navigate = useNavigate();
     //const { user, setUser } = useState('E-mail', 'Password');
