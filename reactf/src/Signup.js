@@ -9,14 +9,15 @@ import { useNavigate } from 'react-router-dom';
 function Signup() {
     //const { user, setUser } = useState('E-mail', 'Password');
     const navigate = useNavigate();
-    const Login = () => {
+    const Login = (e) => {
+        e.preventDefault();
         async function FetchData() {
             let username = await document.getElementById('username').value;
             let email = await document.getElementById('email').value;
             let password = await document.getElementById('password').value;
             if (username !== "" && email !== "" && password !== "") {
                 async function PostData() {
-                    fetch("http://localhost:3001/signup", {
+                    fetch("http://localhost:9000/signup", {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'
@@ -53,7 +54,7 @@ function Signup() {
     //     setPassword(document.getElementById('password').value);
     //     if (email !== "" && password !== "") {
     //         axios
-    //             .post("http://localhost:3001/signin", {
+    //             .post("http://localhost:9000/signin", {
     //                 email: email,
     //                 password: password,
     //             })
@@ -71,7 +72,7 @@ function Signup() {
     //         alert("請輸入密碼!");
     //     }
     //     // async function fetchData() {
-    //     //     let res = await fetch("http://localhost:3001/signin")
+    //     //     let res = await fetch("http://localhost:9000/signin")
     //     //     let data = await res.json()
     //     //     console.log(data)
     //     // }

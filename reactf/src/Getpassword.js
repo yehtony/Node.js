@@ -11,13 +11,14 @@ import { useNavigate } from "react-router-dom";
 function Getpassword() {
     const navigate = useNavigate();
     //const { user, setUser } = useState('E-mail', 'Password');
-    const Login = () => {
+    const Login = (e) => {
+        e.preventDefault();
         async function FetchData() {
             let email = await document.getElementById('email').value;
             // let password = await document.getElementById('password').value;
             if (email !== "") {
                 async function PostData() {
-                    fetch("http://localhost:3001/getpassword", {
+                    fetch("http://localhost:9000/getpassword", {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'
@@ -30,15 +31,13 @@ function Getpassword() {
                         .then(data => {
                             console.log(data[Object.keys(data)[0]]);
                             alert(data[Object.keys(data)[0]]);
-                            if (data[Object.keys(data)[0]] === 'Account Not Exist')
-                                Promise.reject();
-                            else
-                                Promise.resolve();
+                            if (data[Object.keys(data)[0]] === 'Password Sent to Email')
+                                navigate('/')
                         })
-                        .then(() => navigate('/'))
+
                         .catch((err) => {
-                            // console.log(err);
-                            // alert(err);
+                            console.log(err);
+                            alert(err);
                         })
                 }
                 PostData();
@@ -57,7 +56,7 @@ function Getpassword() {
     //     setPassword(document.getElementById('password').value);
     //     if (email !== "" && password !== "") {
     //         axios
-    //             .post("http://localhost:3001/signin", {
+    //             .post("http://localhost:9000/signin", {
     //                 email: email,
     //                 password: password,
     //             })
@@ -75,7 +74,7 @@ function Getpassword() {
     //         alert("請輸入密碼!");
     //     }
     //     // async function fetchData() {
-    //     //     let res = await fetch("http://localhost:3001/signin")
+    //     //     let res = await fetch("http://localhost:9000/signin")
     //     //     let data = await res.json()
     //     //     console.log(data)
     //     // }

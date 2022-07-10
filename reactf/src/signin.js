@@ -3,6 +3,7 @@ import './Signin.scss';
 //import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import Homepage from './Homepage'
 //import { promise } from '../../express/server/config/db';
 //import { useNavigation } from 'react';
 
@@ -11,13 +12,14 @@ import { useNavigate } from "react-router-dom";
 function Signin() {
     const navigate = useNavigate();
     //const { user, setUser } = useState('E-mail', 'Password');
-    const Login = () => {
+    const Login = (e) => {
+        e.preventDefault(); //Important!! to prevent linkloop
         async function FetchData() {
             let email = await document.getElementById('email').value;
             let password = await document.getElementById('password').value;
             if (email !== "" && password !== "") {
                 async function PostData() {
-                    fetch("http://localhost:3001/signin", {
+                    fetch("http://localhost:9000/signin", {
                         method: "POST",
                         headers: {
                             'Content-Type': 'application/json'
@@ -30,7 +32,10 @@ function Signin() {
                         .then(data => {
                             console.log(data[Object.keys(data)[0]]);
                             alert(data[Object.keys(data)[0]]);
+                            if (data[Object.keys(data)[0]] === 'Login Successfully')
+                                navigate('/homepage', { state: { email: email } })
                         })
+
                         .catch((err) => {
                             console.log(err);
                             alert(err);
@@ -50,7 +55,7 @@ function Signin() {
     //     setPassword(document.getElementById('password').value);
     //     if (email !== "" && password !== "") {
     //         axios
-    //             .post("http://localhost:3001/signin", {
+    //             .post("http://localhost:9000/signin", {
     //                 email: email,
     //                 password: password,
     //             })
@@ -68,14 +73,14 @@ function Signin() {
     //         alert("請輸入密碼!");
     //     }
     //     // async function fetchData() {
-    //     //     let res = await fetch("http://localhost:3001/signin")
+    //     //     let res = await fetch("http://localhost:9000/signin")
     //     //     let data = await res.json()
     //     //     console.log(data)
     //     // }
     //     // fetchData()
     // };
     return (
-        <form onSubmit={Login}>
+        <form onSubmit={Login} >
             <fieldset className='container'>
                 <legend className='title'>Sign In</legend>
                 <div className='signin'>
