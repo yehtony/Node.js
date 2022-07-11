@@ -44,7 +44,7 @@ function mailOptions(data) {
         from: 'yehtony880208@outlook.com',// sender address
         to: data[0].Email,// // list of receivers
         subject: "TodoWeb's Password", // Subject line
-        text: data[0].Password,
+        text: data[0].U_Name + ", your TodoWeb's Password is " + data[0].Password,
     }
     html: `
     <div style="padding:10px;border-style: ridge">

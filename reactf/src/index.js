@@ -1,5 +1,7 @@
+// import { Router } from 'express';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {HashRouter as Router} from 'react-router-dom'; //Importent: to solve multiple Router component occur in same app.
 import './index.css';
 // import App from './App.js';
 // import Signin from './Signin';
@@ -9,9 +11,11 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    {/* <Signin /> */}
-    <Login />
+    <Router> {/*Important: to solve multiple Router component occur (or router inside a router) in same app. Add Router in root and remove all Router from other components*} 
+      {/* <App /> */}
+      {/* <Signin /> */}
+      <Login />
+    </Router>
   </React.StrictMode>
 );
 
