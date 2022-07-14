@@ -1,4 +1,4 @@
-function Board() {
+const Board = () => {
     return (
         <div>Board</div>
     )

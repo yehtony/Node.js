@@ -1,4 +1,4 @@
-function Workspace() {
+const Workspace = () => {
     return (
         <div>Workspace</div>
     )

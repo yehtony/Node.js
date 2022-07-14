@@ -1,0 +1,57 @@
+nav {
+    background-color: slateblue;
+    display: flex;
+    align-items: center;
+
+    button {
+        display: flex;
+        align-items: center;
+
+        &.hbn {
+            .icon {
+                margin: 0 0.3em;
+            }
+
+            margin-right: 1em;
+            font-size: x-large;
+            font-weight: bolder;
+            color: mintcream;
+        }
+
+        &.hbn:hover {
+            background-color: transparent;
+
+            .icon {
+                color: midnightblue;
+            }
+
+            text-shadow: 0 0 10px midnightblue,
+            2px 2px 0 midnightblue,
+            2px 0px 0 midnightblue,
+            2px -2px 0 midnightblue,
+            0px 2px 0 midnightblue,
+            0px -2px 0 midnightblue,
+            -2px 2px 0 midnightblue,
+            -2px 0px 0 midnightblue,
+            -2px -2px 0 midnightblue,
+        }
+
+        font-size: large;
+        margin: 0.3em;
+        padding: 0.3em;
+        border-radius: 0.2em;
+        background-color: transparent;
+        border-color: transparent;
+        color: mistyrose;
+
+        &:hover {
+            background-color: mediumslateblue;
+            color: mintcream;
+            cursor: pointer;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+}
