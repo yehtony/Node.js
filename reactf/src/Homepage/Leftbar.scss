@@ -1,0 +1,21 @@
+#boardlist {
+    display: none;
+}
+
+.boardlisttr {
+    visibility: collapse;
+    font-size: x-large;
+}
+
+
+#boardlist:checked~* .boardlisttr {
+    visibility: visible;
+}
+
+.labelboardlist {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+}
+

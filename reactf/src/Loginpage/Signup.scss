@@ -44,7 +44,7 @@ input:focus::-webkit-input-placeholder {
         input {
             outline: none;
             position: relative;
-            top: -0.25em;
+            top: 0.25em;
             box-sizing: border-box;
             width: 100%;
             border: none;
@@ -78,16 +78,17 @@ input:focus::-webkit-input-placeholder {
 .button {
     width: 100%;
     margin: 2% 0%;
+    padding: 0.25em;
     // font-family: Lucida Sans Unicode;
     font-size: x-large;
 
     &.b1 {
-        background-color: dodgerblue;
+        background-color: rgb(40, 147, 255);
         color: white;
         border-radius: 0.5em;
 
         &:hover {
-            background-color: #00CC00;
+            background-color: rgb(0, 128, 255);
             color: white;
         }
     }

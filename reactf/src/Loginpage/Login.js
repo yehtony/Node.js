@@ -1,7 +1,7 @@
 import Signin from './Signin';
 import Signup from './Signup';
 import Getpassword from './Getpassword';
-import Homepage from './Homepage';
+import Homepage from '../Homepage/Homepage';
 import './Login.scss';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
