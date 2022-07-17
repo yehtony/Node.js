@@ -1,21 +1,68 @@
-#boardlist {
+#leftbarboard {
     display: none;
 }
 
-.boardlisttr {
-    visibility: collapse;
-    font-size: x-large;
+#leftbarcreate {
+    display: none;
 }
 
+.leftbar {
+    font-size: 20px;
 
-#boardlist:checked~* .boardlisttr {
+    &.board {
+        visibility: collapse;
+    }
+
+    &.create {
+        visibility: collapse;
+    }
+}
+
+#leftbarboard:checked~* .leftbar.board {
     visibility: visible;
 }
 
-.labelboardlist {
+#leftbarboard:checked~*.leftbartable {
+    margin-bottom: 0.5em;
+}
+
+#leftbarcreate:checked~* .leftbar.create {
+    visibility: visible;
+}
+
+#leftbarcreate:checked~*.leftbartable {
+    margin-bottom: 0.5em;
+}
+
+
+.labelleftbar {
     display: flex;
     align-items: center;
     width: 100%;
     text-align: left;
 }
 
+.leftbartable {
+    padding-left: 39px;
+}
+
+td {
+    padding-top: 5px;
+}
+
+.icon {
+    margin-right: 0.4em;
+
+    &.add {
+        color: rgb(26, 105, 170);
+        vertical-align: middle;
+        height: 27.8px;
+        width: 27.8px;
+        border: 2px solid rgb(26, 105, 170);
+        border-radius: 0.2em;
+
+        &:hover {
+            background-color: rgb(135, 206, 250, 0.5);
+        }
+    }
+}

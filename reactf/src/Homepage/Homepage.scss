@@ -1,7 +1,8 @@
 button {
     cursor: pointer;
 }
-label{
+
+label {
     cursor: pointer;
 }
 
@@ -32,14 +33,14 @@ nav {
                 color: black;
             }
 
-            text-shadow: 2px 2px 0 black,
-            2px 0px 0 black,
-            2px -2px 0 black,
-            0px 2px 0 black,
-            0px -2px 0 black,
-            -2px 2px 0 black,
-            -2px 0px 0 black,
-            -2px -2px 0 black,
+            text-shadow: 1.8px 1.8px 0 black,
+            1.8px 0px 0 black,
+            1.8px -1.8px 0 black,
+            0px 1.8px 0 black,
+            0px -1.8px 0 black,
+            -1.8px 1.8px 0 black,
+            -1.8px 0px 0 black,
+            -1.8px -1.8px 0 black,
         }
 
         font-size: x-large;
@@ -63,11 +64,13 @@ a {
 }
 
 .nav2 {
-    width: 17.5%;
+    padding: 5px;
+    width: 280px;
     height: 100vh;
     background-color: rgb(135, 206, 250, 0.2);
 
     button {
+        color: rgb(26, 105, 170);
         display: flex;
         align-items: center;
         width: 100%;
@@ -76,7 +79,7 @@ a {
 
         &:hover {
             background-color: rgb(135, 206, 250, 0.5);
-            color: white;
+            // color: white;
         }
 
         border: none;
@@ -84,14 +87,14 @@ a {
         align-items: center;
 
         .icon {
-            margin: 0 0.4em;
+            margin-right: 0.4em;
         }
     }
 
     input {
         box-sizing: border-box;
         width: 100%;
-        border-color: rgb(135, 206, 250, 0.5);
+        border-color: rgb(26, 105, 170);
         outline: none;
     }
 }

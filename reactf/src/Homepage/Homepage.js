@@ -9,9 +9,9 @@ import { useLocation } from "react-router-dom";
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { BsCalendar4Range } from "react-icons/bs";
-import { IoIosArrowDropdown, IoIosAddCircleOutline } from "react-icons/io";
 import { nanoid } from 'nanoid';
-import HomepageList from './HomepageList';
+import LeftbarCreate from './LeftbarCreate';
+import LeftbarBoard from './LeftbarBoard';
 
 
 function Layout(props) {
@@ -28,9 +28,10 @@ function Layout(props) {
                 <Link to='../board'><button>Board</button></Link>
             </nav >
             <div className='nav2'>
-                <button>Create<IoIosArrowDropdown className='icon ic1'></IoIosArrowDropdown></button>
-                <input type='text' className='input in1 '></input>
-                <HomepageList board={board}></HomepageList>
+                {/* <button>Create<IoIosArrowDropdown className='icon ic1'></IoIosArrowDropdown></button>
+                <input type='text' className='input in1 '></input> */}
+                <LeftbarCreate createboard={setBoard}></LeftbarCreate>
+                <LeftbarBoard board={board}></LeftbarBoard>
                 {/* <button>Board<IoIosArrowDropdown className='icon ic2'></IoIosArrowDropdown></button> */}
             </div>
         </div>
