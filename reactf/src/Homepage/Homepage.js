@@ -16,16 +16,17 @@ import TopbarUser from './TopbarUser';
 
 
 function Layout({ user }) {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     // const location = useLocation();
     const [board, setBoard] = useState([
         { id: nanoid(), board: 'Todoweb' },
         { id: nanoid(), board: 'Todolist' }
     ]);
+
     return (
         <div className="layout">
             <nav>
-                <Link to='..' className='logo'><button className='hbn todoweb' data-stroke="TodoWeb"><BsCalendar4Range className='icon' />TodoWeb</button></Link>
+                <button className='hbn todoweb' data-stroke="TodoWeb" onClick={() => navigate('..', { state: { user: user } })}><BsCalendar4Range className='icon' />TodoWeb</button>
                 {/* <Link to='../workspace'><button>Workspace</button></Link>
                 <Link to='../board'><button>Board</button></Link> */}
                 <div className='user'><TopbarUser user={user} /></div>
@@ -43,10 +44,11 @@ function Layout({ user }) {
 
 function Homepage() {
     const location = useLocation(); //to get location and state from navigate
+    const [user, setUser] = useState(location.state.user);
     return (
         <Routes>
-            <Route exact path='/' element={<Layout user={location.state.email}><Workspace /></Layout>} />
-            <Route exact path='/workspace' element={<Layout><Workspace /></Layout>} />
+            <Route exact path='/' element={<Layout user={user}><Workspace /></Layout>} />
+            <Route exact path='/workspace' element={<Layout user={user}><Workspace /></Layout>} />
             <Route exact path='/board' element={<Layout><Board /></Layout>} />
         </Routes>
     )

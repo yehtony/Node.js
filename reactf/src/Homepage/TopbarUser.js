@@ -7,13 +7,13 @@ const TopbarUser = ({ user }) => {
         return (
             <div>
                 <input type="checkbox" id="topbaruser"></input>
-                <button className='btntopbar user'><label for="topbaruser" className='labeltopbar user'><FaRegUserCircle className='icon' />{user}</label></button>
+                <button className='btntopbar user'><label htmlFor="topbaruser" className='labeltopbar user'><FaRegUserCircle className='icon' />{user.U_Name}</label></button>
                 <table className="topbartable">
                     <thead>
                         <tr className="topbar user"><td>Account</td></tr>
                     </thead>
                     <tbody>
-                        <tr className="topbar user"><td>yexuanncu@gmail.com</td></tr>
+                        <tr className="topbar user"><td>{user.Email}</td></tr>
                         <tr className="topbar user"><td>Profile</td></tr>
                         <tr className="topbar user"><td>Setting</td></tr>
                         <tr className="topbar user"><td>Log out</td></tr>

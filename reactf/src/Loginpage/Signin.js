@@ -31,7 +31,7 @@ function Signin() {
                             console.log(data[Object.keys(data)[0]]);
                             alert(data[Object.keys(data)[0]]);
                             if (data[Object.keys(data)[0]] === 'Login Successfully')
-                                navigate('/homepage', { state: { email: email } })
+                                navigate('/homepage', { state: { user: data[Object.keys(data)[1]] } })
                         })
 
                         .catch((err) => {

@@ -24,8 +24,10 @@ router.post("/", function (req, res) {
                     res.json({ error: 'Password Wrong' });
             })
         }
-        else
-            res.json({ message: 'Login Successfully' });
+        else {
+            console.log(data[0].U_Name);
+            res.json({ message: 'Login Successfully', data: data[0] });
+        }
     });
     // const promise1 = new Promise((resolve, reject) => {
     //     db.query(sql, function (err, data, fields) {

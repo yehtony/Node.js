@@ -24,13 +24,15 @@ const LeftbarCreate = ({ createboard }) => {
         return (
             <div>
                 {icon === "IoIosArrowDropdownCircle" ?
-                    <button onClick={() => changeIcon()}><label for="leftbarcreate" className='labelleftbar create'><IoIosArrowDropdownCircle className='icon' />Create</label></button>
+                    <button onClick={() => changeIcon()}><label htmlFor="leftbarcreate" className='labelleftbar create'><IoIosArrowDropdownCircle className='icon' />Create</label></button>
                     :
-                    <button onClick={() => changeIcon()}><label for="leftbarcreate" className='labelleftbar create'><IoIosArrowDropup className='icon' />Create</label></button>}
+                    <button onClick={() => changeIcon()}><label htmlFor="leftbarcreate" className='labelleftbar create'><IoIosArrowDropup className='icon' />Create</label></button>}
 
                 <input type="checkbox" id="leftbarcreate"></input>
                 <table className="leftbartable">
-                    <tr className="leftbar create"><td><input type='text' value={board} onChange={changeInput} /></td><td><IoIosAdd className='icon add' onClick={setBoard}></IoIosAdd></td></tr>
+                    <tbody>
+                        <tr className="leftbar create"><td><input type='text' value={board} onChange={changeInput} /></td><td><IoIosAdd className='icon add' onClick={setBoard}></IoIosAdd></td></tr>
+                    </tbody>
                 </table>
             </div >
         )
