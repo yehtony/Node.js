@@ -1,0 +1,44 @@
+#topbaruser {
+    display: none;
+}
+
+.topbar {
+    font-size: 20px;
+    color: rgb(26, 105, 170);
+
+    &.user {
+        visibility: collapse;
+    }
+}
+
+#topbaruser:checked~* .topbar.user {
+    visibility: visible;
+}
+
+#topbaruser:checked~*.topbartable {
+    margin-bottom: 0.5em;
+    background-color: rgb(135, 206, 250, 0.2);
+    border-radius: 0.2em;
+}
+
+#topbaruser:checked~*.btntopbar:hover {
+    background-color: rgb(65, 160, 255);
+}
+
+#topbaruser:checked~*.btntopbar {
+    background-color: rgb(49, 152, 255);
+}
+
+.labeltopbar {
+    display: flex;
+    align-items: center;
+    // text-align: left;
+}
+
+.topbartable {
+    position: absolute;
+    right: 14px;
+    margin-top: 10px;
+    padding: 0.5em;
+    width: 250px;
+}

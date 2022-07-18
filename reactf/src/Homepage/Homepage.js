@@ -12,10 +12,12 @@ import { BsCalendar4Range } from "react-icons/bs";
 import { nanoid } from 'nanoid';
 import LeftbarCreate from './LeftbarCreate';
 import LeftbarBoard from './LeftbarBoard';
+import TopbarUser from './TopbarUser';
 
 
-function Layout(props) {
+function Layout({ user }) {
     // const navigate = useNavigate()
+    // const location = useLocation();
     const [board, setBoard] = useState([
         { id: nanoid(), board: 'Todoweb' },
         { id: nanoid(), board: 'Todolist' }
@@ -23,9 +25,10 @@ function Layout(props) {
     return (
         <div className="layout">
             <nav>
-                <Link to='..'><button className='hbn todoweb' data-stroke="TodoWeb"><BsCalendar4Range className='icon' />TodoWeb</button></Link>
-                <Link to='../workspace'><button>Workspace</button></Link>
-                <Link to='../board'><button>Board</button></Link>
+                <Link to='..' className='logo'><button className='hbn todoweb' data-stroke="TodoWeb"><BsCalendar4Range className='icon' />TodoWeb</button></Link>
+                {/* <Link to='../workspace'><button>Workspace</button></Link>
+                <Link to='../board'><button>Board</button></Link> */}
+                <div className='user'><TopbarUser user={user} /></div>
             </nav >
             <div className='nav2'>
                 {/* <button>Create<IoIosArrowDropdown className='icon ic1'></IoIosArrowDropdown></button>
@@ -39,10 +42,10 @@ function Layout(props) {
 }
 
 function Homepage() {
-    // const location = useLocation(); //to get location and state from navigate
+    const location = useLocation(); //to get location and state from navigate
     return (
         <Routes>
-            <Route exact path='/' element={<Layout><Workspace /></Layout>} />
+            <Route exact path='/' element={<Layout user={location.state.email}><Workspace /></Layout>} />
             <Route exact path='/workspace' element={<Layout><Workspace /></Layout>} />
             <Route exact path='/board' element={<Layout><Board /></Layout>} />
         </Routes>
